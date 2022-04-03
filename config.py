@@ -2,10 +2,16 @@
 import torch
 import os
 # base path of the dataset
-DATASET_PATH = os.path.join("dataset", "train")
+DATASET_PATH = os.path.join("data_lungs")
 # define the path to the images and masks dataset
-IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "images")
-MASK_DATASET_PATH = os.path.join(DATASET_PATH, "masks")
+IMAGE_DATASET_PATH = os.path.join(DATASET_PATH, "image")
+MASK_DATASET_PATH = os.path.join(DATASET_PATH, "label")
+#define the path of only images containing haemorraghing
+IMAGE_HAEM_DATASET_PATH = os.path.join("data_only_haem", "image")
+MASK_HAEM_DATASET_PATH = os.path.join("data_only_haem", "label")
+#define the path of only images containing haemorraghing
+IMAGE_HAEM_4_DATASET_PATH = os.path.join("data_only_haem_4", "image")
+MASK_HAEM_4_DATASET_PATH = os.path.join("data_only_haem_4", "label")
 # define the test split
 TEST_SPLIT = 0.15
 # determine the device to be used for training and evaluation
@@ -21,11 +27,11 @@ NUM_LEVELS = 3
 # initialize learning rate, number of epochs to train for, and the
 # batch size
 INIT_LR = 0.001
-NUM_EPOCHS = 40
-BATCH_SIZE = 64
+NUM_EPOCHS = 50
+BATCH_SIZE = 1
 # define the input image dimensions
-INPUT_IMAGE_WIDTH = 128
-INPUT_IMAGE_HEIGHT = 128
+INPUT_IMAGE_WIDTH = 512
+INPUT_IMAGE_HEIGHT = 512
 # define threshold to filter weak predictions
 THRESHOLD = 0.5
 # define the path to the base output directory
